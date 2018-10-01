@@ -1,0 +1,26 @@
+<body>
+  <div class="container">
+    <header>
+	<div id="center" style="text-align:center;">
+            <a href="https://murmuring-thicket-87757.herokuapp.com/" class="button homeButton">Introduction</a>
+            <a href="https://tranquil-dusk-13047.herokuapp.com/" class="button pageTwo">Installation</a>
+            <a href="https://enigmatic-citadel-70415.herokuapp.com" class="button pageThree">Tutorial</a>
+            <a href="https://sleepy-shore-17527.herokuapp.com/" class="button pageFour">Example App</a>
+            <a href="https://hidden-stream-45208.herokuapp.com" class="button pageFive">Conclusion</a>
+            <a href="https://blooming-dawn-79192.herokuapp.com/" class="button pageSix">Credits</a>	 
+      </div>
+      <br>
+      <h1> To-Do List </h1>
+      <form class="new-task">
+        <input type="text" name="text" placeholder="Type to add new tasks" />
+      </form>
+    </header>
+ 
+    <ul>
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
+

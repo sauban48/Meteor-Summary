@@ -1,0 +1,101 @@
+
+  <head>
+   <link rel = "stylesheet" type = "text/css" href = "main.css" />
+   <title> Meteor Tutorial </title>
+   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+  </head>
+
+  <body>
+     <img src="/images/meteor.png" alt="Meteor Logo" style="width:350px;height:200px;display:block;margin: 0 auto 15px;">    
+     <div id="center" style="text-align: center;">
+	<a href="https://murmuring-thicket-87757.herokuapp.com/" class="button homeButton">Introduction</a>
+            <a href="https://tranquil-dusk-13047.herokuapp.com/" class="button pageTwo">Installation</a>
+            <a href="https://enigmatic-citadel-70415.herokuapp.com" class="button pageThree">Tutorial</a>
+            <a href="https://sleepy-shore-17527.herokuapp.com/" class="button pageFour">Example App</a>
+            <a href="https://hidden-stream-45208.herokuapp.com" class="button pageFive">Conclusion</a>
+            <a href="https://blooming-dawn-79192.herokuapp.com/" class="button pageSix">Credits</a>
+
+     </div>
+     <br>
+    
+     <h1 style="font-family: 'Roboto Condensed', sans-serif;color:white;font-size:28px;text-align: center;">Tutorial</h1>
+    <div class="text">
+    <div class="container">
+    <div class="pad">
+    <h4 class="heading" style ="text-align: center; color:black;"> This page explains how to create a "To-Do List" program using Meteor. </h4>
+    <h3> Creating a Project</h3>
+     <p> Create a new project using the command below. This will create a project file labeled test, with several files and folders inside.  </p>
+      <img src="/images/step1.png" alt="Create Project" style="display:block;margin: 0 auto 15px;">
+     <br>
+     <p> You will be using the folders labeled client and server and creating a folder of your own labelled 'imports' later on. The client folder contains the files which will be directly shown to the
+         the user on the webpage. This file should contain all the code which you want to appear on the page you are creating.    </p>
+      <img src="/images/ss1.png" alt="Project Folder" style="display:block;margin: 0 auto 15px;">
+
+    <h3> Install babel runtime</h3>
+     <p>Before you are able to run your app, you need to install babel runtime as shown in the picture below. Babel uses small helpers for common functions. By default, babel will add these 
+        functions to scripts which need it, and run already transformed code. </p>
+      <img src="/images/step2.png" alt="Babel runtime" style="display:block;margin: 0 auto 15px;">
+
+    <h3> Running the app locally </h3>
+     <p> You'll be able to deploy your site by entering meteor into the command line as shown below.   </p>
+      <img src="/images/step3.png" alt="Meteor Command" style="display:block;margin: 0 auto 15px;">
+     <br>
+     <p> You can then copy the link below into your default browser and it will display what is inside your client folder.</p>
+      <img src="/images/step4.png" alt="Local Host Link" style="display:block;margin: 0 auto 15px;">
+     <p>By default, meteor already has code in its files which shows you how the site works, and links to its own tutorials. You can use it to learn different meteor functions, but for now 
+        we have enough to begin our own tutorial, and you can remove all the starter code in all the client files. </p>
+
+    <h3> Inside your main.html file</h3>
+     <p>To begin, we are just going to add a title to our main.html, and nothing else. We will import the rest which will be displayed into our main.js file which again is also located in the 
+        client folder. The imports will come from a seperate folder as you'll see next.</p> 
+      <img src="/images/mainhtmlss3.png" alt="main.html code" style="display:block;margin: 0 auto 15px;">
+    
+    <h3> Creating your import directory</h3>
+     <p> Create your import directory inside the project folder, and in it create two more directories labeled api and ui. The ui folder will contain the code which will create the body and
+          handle adding and removing tasks on your To-Do List.</p>
+     <img src="/images/imports.png" alt="Imports folder" style="display:block;margin: 0 auto 15px;">
+
+    <h3> Creating the body of your To-Do List</h3>
+     <p> The HTML part of the body contains code which creates the buttons to navigate out of the the page. The body.html file also contains code to create the form and ask the user for input, 
+         and also prints out the tasks on to the page when they are created.  </p>
+     <img src="/images/bodyhtmlss4.png" alt="body.html code" style="display:block;margin: 0 auto 15px;">
+     <br>
+     <p> Meteor's <code>template</code> element works together with javascript to create dynamic web applications adding new data to the webpage when it is entered. Helpers pass
+	 the entered data to the template which then processes it and displays it accordingly. This part of the js file contains a template which defines helper and event 
+	 functions in javascript. These functions are only called when you press enter, and perform the job of handling the tasks, then sending these tasks over to the html file 
+  	 to be printed to the user. </p>
+    
+    <img src="/images/bodyjsss5.png" alt="body.js code" style="display:block;margin: 0 auto 15px;">
+    <br>
+    <h3> Creating tasks in your To-Do list </h3>
+     <p>Below is the tasks.html file which contains the code to print the tasks into a field. This code also creates the checkbox which, if checked, will strike out the task
+	indicating it is complete. </p><br>
+     <img src="/images/taskhtmlss6.png" alt="html code" style="display:block;margin: 0 auto 15px;">
+     <br>
+     <p> The task.js file defines the functions for putting a strike through a completed task when you press the checkbox and adding a button to delete the task.</p>
+     <img src="/images/taskjsss7.png" alt="javascript code" style="display:block;margin: 0 auto 15px;">
+     <br>
+     <p> The tasks.js file contains the code to create the collection, which stores the tasks on a database and is available to both the client and the server side to
+         use. Every time an event is called, it does a Task.remove or Task.update which are both part of the MongoDB database. The code below creates a MongoDB collections object
+	 which has already defined the functions to update and remove and we can use these functions with a simple function call. Collections allow you to store persistent data,
+         and collections also update themselves automatically, so that you are always presented the most up to date data stored on an app.  </p>
+     <img src="/images/tasksjsss8.png" alt="database code" style="display:block;margin: 0 auto 15px;">
+
+    <h3> Setting up server side response</h3>
+     <p>The code below imports the MongoDB collection to the server to keep smooth operation between the server and the client.  </p>
+      <img src="/images/mainjsserverss9.png" alt="server js code" style="display:block;margin: 0 auto 15px;">
+    
+    <h3> Importing to the main.js file</h3>
+     <p>Importing the body.js to the main.js will basically execute the code in the body.js file and pass it to the main.html which will then add the task to the webapp.
+	The following code is what you would enter to import the file.  </p>
+      <img src="/images/mainjs.png" alt="server js code" style="display:block;margin: 0 auto 15px;">
+
+    <h3> Using CSS to add style </h3>
+     <p> This is a short snippet showing what you may need to create an appealing page. This includes adding a background image, a container, a header and more which can be
+         found on the meteor tutorial website.  </p>
+     <img src="/images/cssss1.png" alt="CSS code" style="display:block;margin: 0 auto 15px;">
+   </div>
+   </div>
+   </div>
+  </body>
+

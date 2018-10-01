@@ -1,0 +1,77 @@
+<template name="info">
+
+<div class="txt">
+<div class="con">
+<div  class="container-fluid" >
+
+
+
+<div class="row ">
+
+
+
+	<div class="well" >
+			<h3 style="text-align:center;">Windows <br>
+			</h3> 
+			<ol> 
+				<li> Open cmd.exe. <br></li>
+				<li>Install the Chocolatey Package Manager. <br></li>
+				<ul> 
+				<li> Copy the following command and run it: <br><pre><code>@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+</code> </pre></li> </ul>
+<li> Proceed to install meteor: <br> <pre><code>choco install meteor</code> </pre></li>
+
+</ol>
+		</div>
+		
+
+	<div class="well">
+			<h3 style="text-align:center;">OS X And Linux <br></h3>
+		<ol> <li> Open the terminal. <br> </li>
+			<li> Copy and run the following command: <br><pre><code>curl https://install.meteor.com/ | sh</code></pre></li>
+
+		</ol>
+
+
+		</div>	
+
+
+</div>
+
+
+
+<div class="well" >
+			<h3 style="text-align:center;">Hosting with Heroku<br></h3> 
+			 <ol>  
+			  <li> Create and verify a Heroku account and install the Heroku command line interface.</li>
+			  <li> 'cd' to the Meteor application directory. </li>
+			  <li>  Type in:  
+   			   <pre><code>heroku login</code> </pre>
+			  You will then enter your heroku email and password </li>
+			 <li> Create a git repository, add your meteor files to it and commit it:  
+			   <pre><code>git init<br>git add .<br>git commit -m "first commit adding meteor files"</code></pre> </li>
+			 <li>  Create your Heroku application:
+			<pre><code>heroku create (application name) --stack cedar --region (us or eu depending on your location) --buildpack https://github.com/AdmitHub/meteor-buildpack-horse.git 	</code> </pre>  </li>
+			<li>  Add a remote:  <pre><code>heroku git:remote -a (application name) </code> </pre> </li>
+			<li>  Set a URL for your application to be located: <pre><code>heroku config:set ROOT_URL=http://(Application name).herokuapp.com</code></pre>  </li>
+			<li>  Now you can deploy your site with the command: <pre><code>git push heroku master</code></pre>  </li>
+			<li>  Head over to http://(Application name).herokuapp.com to see you're application in action! </li>
+
+</ol>
+</div>	
+
+
+</div>
+<div class="row">
+
+		<div class="col-md-3"></div>
+	<div class="col-md-6">
+	<h3 style="text-align:center;">Where does Meteor Run?</h3>
+	<p style="text-align:center;"> 	Meteor Runs on OS X(64bit), Linux(both 32 and 64bit) and Windows(32 and 64bit).	<br> The command-line installer supports Mac OS X 10.7 (Lion) and above, as well as most modern Linux distributions.<br>For maximum compatibility, we use CentOS 6.4 to build Linux binaries.
+	The Windows installer uses Chocolatey, which has its own system requirements.<br>Once installed, Meteor supports Windows 7 and Windows Server 2008 R2 and above.</p>
+</div>
+</div>
+
+</div>
+</div>
+</template>

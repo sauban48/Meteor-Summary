@@ -1,0 +1,117 @@
+body {
+  font-family: sans-serif;
+  background-color: #FAEBD7;
+  background-image: url("/images/meteors.jpeg");
+  background-attachment: fixed;
+  background-size: cover;
+ 
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+ 
+  padding: 0;
+  margin: 0;
+  
+  font-size: 14px;
+}
+.text{
+ font-family: 'Roboto Condensed', sans-serif;
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 100%;
+  background: white;
+}
+.pad {
+  padding: 50px;
+  padding-top: 15px;
+}
+
+h4.heading
+{
+ color: white;
+}
+.button 
+{
+  font-family: 'Roboto Condensed', serif;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.6s; /* Safari */
+  transition-duration: 0.6s;
+  cursor: pointer;
+}
+.homeButton
+{
+  background-color: transparent;
+  color: white;
+  border: 2px solid transparent;
+}
+.homeButton:hover
+{
+  background-color: white;
+  color: black;
+}
+.pageTwo
+{
+  background-color: transparent;
+  color: white;
+  border: 2px solid transparent;
+}
+.pageTwo:hover
+{
+  background-color: white;
+  color: black;
+}
+.pageThree
+{
+  background-color: transparent;
+  color: white;
+  border: 2px solid transparent;
+}
+.pageThree:hover
+{
+  background-color: white;
+  color: black;
+}
+.pageFour
+{
+  background-color: transparent;
+  color: white;
+  border: 2px solid transparent;
+}
+.pageFour:hover
+{
+  background-color: white;
+  color: black;
+}
+.pageFive
+{
+  background-color: transparent;
+  color: white;
+  border: 2px solid transparent;
+}
+.pageFive:hover
+{
+  background-color: white;
+  color: black;
+}
+.pageSix
+{
+  background-color: transparent;
+  color: white;
+  border: 2px solid transparent;
+}
+.pageSix:hover
+{
+  background-color: white;
+  color: black;
+}
